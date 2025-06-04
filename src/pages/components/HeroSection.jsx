@@ -10,7 +10,7 @@ export default function HeroSection() {
   return (
     <section className="relative text-center px-4 pt-10 pb-20 ">
       <img
-        src="/assets/images/disaster-relief.jpg"
+        src="/images/disaster-relief.jpg"
         alt="Disaster relief"
         className="absolute inset-0 w-full h-full object-cover opacity-70 dark:opacity-30"
       />

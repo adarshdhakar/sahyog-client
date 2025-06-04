@@ -17,7 +17,7 @@ export default function AboutSection() {
       </div>
       <div className="md:w-1/3 p-4">
         <img
-          src="/assets/images/community-support.jpg"
+          src="/images/community-support.jpg"
           alt="Community support"
           className="rounded-2xl shadow-md"
         />

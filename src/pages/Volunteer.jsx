@@ -32,7 +32,7 @@ export default function Volunteer() {
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <img
-        src="/assets/images/volunteer-hero.jpg"
+        src="/images/volunteer-hero.jpg"
         alt="Volunteer"
         className="absolute inset-0 w-full h-full object-cover object-center z-0"
         style={{ filter: 'brightness(0.6) blur(1px)' }}
