@@ -71,59 +71,63 @@ export default function DonationPage() {
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      className="max-w-lg mx-auto mt-20 p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-xl"
-    >
-      <h1 className="text-3xl font-bold text-center text-indigo-600 dark:text-white mb-4">
-        Support Sahyog 🙏
-      </h1>
-      <p className="text-center text-gray-600 dark:text-gray-300 mb-6">
-        Your donation helps us bring timely aid during disasters.
-      </p>
-
-      <div className="mb-4">
-        <label className="block mb-1 text-gray-700 dark:text-gray-300">Full Name</label>
-        <input
-          type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          className="w-full px-4 py-2 rounded-md border dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
-          placeholder="John Doe"
-        />
-      </div>
-
-      <div className="mb-4">
-        <label className="block mb-1 text-gray-700 dark:text-gray-300">Email Address</label>
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="w-full px-4 py-2 rounded-md border dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
-          placeholder="you@example.com"
-        />
-      </div>
-
-      <div className="mb-6">
-        <label className="block mb-1 text-gray-700 dark:text-gray-300">Donation Amount (INR)</label>
-        <input
-          type="number"
-          min="1"
-          value={amount}
-          onChange={(e) => setAmount(e.target.value)}
-          className="w-full px-4 py-2 rounded-md border dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
-          placeholder="e.g. 500"
-        />
-      </div>
-
-      <button
-        onClick={handlePayment}
-        disabled={loading}
-        className="w-full py-3 bg-indigo-600 text-white font-semibold rounded-md hover:bg-indigo-700 transition disabled:opacity-60"
+    <>
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="max-w-lg mx-auto mt-20 p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-xl"
       >
-        {loading ? "Processing..." : "Donate Now"}
-      </button>
-    </motion.div>
+        <h1 className="text-3xl font-bold text-center text-indigo-600 dark:text-white mb-4">
+          Support Sahyog 🙏
+        </h1>
+        <p className="text-center text-gray-600 dark:text-gray-300 mb-6">
+          Your donation helps us bring timely aid during disasters.
+        </p>
+
+        <div className="mb-4">
+          <label className="block mb-1 text-gray-700 dark:text-gray-300">Full Name</label>
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            className="w-full px-4 py-2 rounded-md border dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            placeholder="John Doe"
+          />
+        </div>
+
+        <div className="mb-4">
+          <label className="block mb-1 text-gray-700 dark:text-gray-300">Email Address</label>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="w-full px-4 py-2 rounded-md border dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            placeholder="you@example.com"
+          />
+        </div>
+
+        <div className="mb-6">
+          <label className="block mb-1 text-gray-700 dark:text-gray-300">Donation Amount (INR)</label>
+          <input
+            type="number"
+            min="1"
+            value={amount}
+            onChange={(e) => setAmount(e.target.value)}
+            className="w-full px-4 py-2 rounded-md border dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            placeholder="e.g. 500"
+          />
+        </div>
+
+        <button
+          onClick={handlePayment}
+          disabled={loading}
+          className="w-full py-3 bg-indigo-600 text-white font-semibold rounded-md hover:bg-indigo-700 transition disabled:opacity-60"
+        >
+          {loading ? "Processing..." : "Donate Now"}
+        </button>
+      </motion.div>
+      <br />
+      <br />
+    </>
   );
 }

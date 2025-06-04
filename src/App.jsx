@@ -2,7 +2,12 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import LandingPage from "./pages/LandingPage.jsx";
 import Donate from "./pages/Donate.jsx";
 import MainLayout from "./layouts/MainLayout.jsx"; 
+import FindReliefCenters from "./pages/FindReliefCenters.jsx";
 import './App.css';
+import Volunteer from "./pages/Volunteer.jsx";
+import AboutPage from "./pages/AboutPage.jsx";
+import FAQ from "./pages/FAQ.jsx";
+import ContactUs from "./pages/ContactUs.jsx";
 
 function App() {
   return (
@@ -11,6 +16,11 @@ function App() {
         <Route element={<MainLayout />}>
           <Route path="/" element={<LandingPage />} />
           <Route path="/donate" element={<Donate />} />
+          <Route path="/relief-centers" element={<FindReliefCenters />} />
+          <Route path="/volunteer" element={<Volunteer />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/faq" element={<FAQ />} />
+          <Route path="/contact" element={<ContactUs />} />
         </Route>
 
         <Route path="*" element={<Navigate to="/" />} />

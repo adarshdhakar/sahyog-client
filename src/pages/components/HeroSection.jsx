@@ -8,7 +8,7 @@ export default function HeroSection() {
   const { t } = useTranslation();
 
   return (
-    <section className="relative text-center px-4 pt-10 pb-20">
+    <section className="relative text-center px-4 pt-10 pb-20 ">
       <img
         src="/assets/images/disaster-relief.jpg"
         alt="Disaster relief"

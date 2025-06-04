@@ -1,4 +1,3 @@
-// src/pages/components/FeaturesSection.jsx
 import { useTranslation } from 'react-i18next';
 
 export default function FeaturesSection() {
@@ -13,12 +12,17 @@ export default function FeaturesSection() {
 
   return (
     <section className="px-6 py-12">
-      <h3 className="text-3xl font-semibold text-center mb-8">{t('features_heading')}</h3>
+      <h3 className="text-3xl font-semibold text-center mb-8 text-gray-800 dark:text-white">
+        {t('features_heading')}
+      </h3>
       <div className="grid md:grid-cols-4 gap-6">
         {features.map((feature, index) => (
-          <div key={index} className="bg-white dark:bg-gray-800 rounded-2xl shadow-md p-6 text-center">
-            <h4 className="font-semibold text-xl mb-2">{feature.title}</h4>
-            <p className="text-sm">{feature.desc}</p>
+          <div
+            key={index}
+            className="bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-2xl shadow-sm p-6 text-center transition-colors"
+          >
+            <h4 className="font-semibold text-xl mb-2 text-gray-900 dark:text-white">{feature.title}</h4>
+            <p className="text-sm text-gray-700 dark:text-gray-300">{feature.desc}</p>
           </div>
         ))}
       </div>
