@@ -1,10 +1,23 @@
 // src/components/Header.jsx
+import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '../components/ui/Button';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 
 export default function Header({t, i18n, mobileOpen, setMobileOpen, darkMode, setDarkMode, changeLanguage}) {
   const navigate = useNavigate();
+  const [user, setUser] = useState(null);
+
+  const handleLogout = () => {
+    localStorage.removeItem("authUser");
+    navigate("/login");
+  }
+  
+  useEffect(() => {
+    const userData = JSON.parse(localStorage.getItem("authUser"));
+    setUser(userData);
+  }, []);
+
   return (
     <header className="bg-violet-200 dark:bg-gray-800 shadow-md sticky top-0 z-50">
       <div className="px-4 py-4 flex items-center justify-between">
@@ -19,8 +32,23 @@ export default function Header({t, i18n, mobileOpen, setMobileOpen, darkMode, se
             <option value="ja" className="dark:bg-gray-800">日本語</option>
           </select>
           <button onClick={() => setDarkMode(!darkMode)}>{darkMode ? <Sun /> : <Moon />}</button>
-          <Link to="/login"><Button variant="outline">{t("login")}</Button></Link>
-          <Link to="/register"><Button>{t("signup")}</Button></Link>
+          {localStorage.getItem("authUser") ? (
+            <>
+              <Link to="/profile">
+                <img
+                  src={`https://api.dicebear.com/7.x/initials/svg?seed=${user?.displayName || user?.email || 'Anonymous'}`}
+                  alt="User Avatar"
+                  className="w-10 h-10 rounded-full"
+                />  
+              </Link>
+              <Button onClick={handleLogout} variant="outline">{t("logout")}</Button>
+            </>
+          ) : (
+            <>
+              <Link to="/login"><Button variant="outline">{t("login")}</Button></Link>
+              <Link to="/register"><Button>{t("signup")}</Button></Link>
+            </>
+          )}
         </div>
       </div>
        {mobileOpen && (

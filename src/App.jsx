@@ -8,6 +8,9 @@ import Volunteer from "./pages/Volunteer.jsx";
 import AboutPage from "./pages/AboutPage.jsx";
 import FAQ from "./pages/FAQ.jsx";
 import ContactUs from "./pages/ContactUs.jsx";
+import LoginSignup from "./pages/LoginSignup.jsx";
+import Dashboard from "./pages/Dashboard.jsx";
+import Profile from "./pages/Profile.jsx";
 
 function App() {
   return (
@@ -21,6 +24,10 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/contact" element={<ContactUs />} />
+          <Route path="/login" element={<LoginSignup />} />
+          <Route path="/register" element={<LoginSignup />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/profile" element={<Profile />} />
         </Route>
 
         <Route path="*" element={<Navigate to="/" />} />
