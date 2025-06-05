@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 
@@ -99,12 +100,12 @@ export default function AboutPage() {
               "Whether you want to volunteer, donate, or just spread the word — every effort counts. Let's build a kinder, stronger support system together."
             )}
           </p>
-          <a
-            href="/volunteer"
+          <Link 
+            to="/volunteer"
             className="inline-block px-6 py-2 rounded bg-indigo-600 text-white hover:bg-indigo-700 transition"
           >
             {t("become_volunteer", "Become a Volunteer")}
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>
